@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import include, path
 
-from accounts.views import CustomRegisterView, FacebookLogin, GoogleLogin
+from accounts.views import CustomRegisterView, FacebookLogin, GoogleLogin, getPhoneNumberRegistered_TimeBased
 from dj_rest_auth.views import PasswordResetView, PasswordResetConfirmView
 urlpatterns = [
+        path("phone/<phone>/", getPhoneNumberRegistered_TimeBased.as_view(), name="OTP_Gen"),
+
     path('', include('dj_rest_auth.urls')),
     # path('password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),
     # path('password/reset/confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
