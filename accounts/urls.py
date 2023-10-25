@@ -1,9 +1,16 @@
 from django.contrib import admin
 from django.urls import include, path
 
-from accounts.views import CustomRegisterView, FacebookLogin, GoogleLogin, getPhoneNumberRegistered_TimeBased
+from accounts.views import CustomRegisterView, FacebookLogin, GoogleLogin, ProfileViewSet, getPhoneNumberRegistered_TimeBased
 from dj_rest_auth.views import PasswordResetView, PasswordResetConfirmView
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'profiles', ProfileViewSet)
+
 urlpatterns = [
+    ### profile ###
+    path('', include(router.urls)),
     ### phone ###
     path("phone/<phone>/", getPhoneNumberRegistered_TimeBased.as_view(), name="OTP_Gen"),
 

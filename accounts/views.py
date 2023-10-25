@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from dj_rest_auth.registration.views import SocialLoginView
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -7,6 +6,33 @@ from dj_rest_auth.registration.views import SocialLoginView
 from accounts.serializers import CustomRegistration
 from .utils import *
 from rest_framework import status
+from datetime import datetime
+from django.core.exceptions import ObjectDoesNotExist
+import pyotp
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import PhoneModel
+import base64
+from dj_rest_auth.registration.views import RegisterView
+from rest_framework import viewsets
+from .models import Profile
+from .serializers import ProfileSerializer
+from rest_framework.permissions import IsAuthenticated
+
+
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticated]  
+
+
+class CustomRegisterView(RegisterView):
+    serializer_class = CustomRegistration
+    # serializer_class = RegisterSerializer
+
+
+
 
 class FacebookLogin(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter
@@ -20,25 +46,6 @@ class GoogleLogin(SocialLoginView): # if you want to use Implicit Grant, use thi
     adapter_class = GoogleOAuth2Adapter
 
 
-
-from dj_rest_auth.registration.serializers import RegisterSerializer
-from dj_rest_auth.registration.views import RegisterView
-class CustomRegisterView(RegisterView):
-    serializer_class = CustomRegistration
-    # serializer_class = RegisterSerializer
-
-
-
-
-from datetime import datetime
-from django.core.exceptions import ObjectDoesNotExist
-import pyotp
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .models import PhoneModel
-import base64
-
-
 # This class returns the string needed to generate the key
 class generateKey:
     @staticmethod
@@ -46,12 +53,12 @@ class generateKey:
         return str(phone) + str(datetime.date(datetime.now())) + "Some Random Secret Key"
 
 
-
-
 # Time after which OTP will expire
 EXPIRY_TIME = 50 # seconds
 
 class getPhoneNumberRegistered_TimeBased(APIView):
+    permission_classes = [IsAuthenticated]  # Require authentication for this view
+
     # Get to Create a call for OTP
     @staticmethod
     def get(request, phone):
@@ -90,6 +97,8 @@ class getPhoneNumberRegistered_TimeBased(APIView):
         OTP = pyotp.TOTP(key,interval = EXPIRY_TIME)  # TOTP Model 
         if OTP.verify(request.data["otp"]):  # Verifying the OTP
             Mobile.isVerified = True
+            Mobile.user=request.user
             Mobile.save()
             return Response("You are authorised", status=200)
+            
         return Response("OTP is wrong/expired", status=400)

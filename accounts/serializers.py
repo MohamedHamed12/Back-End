@@ -1,5 +1,6 @@
 from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
+from .models import Profile
 
 
 class CustomRegistration(RegisterSerializer):
@@ -14,3 +15,8 @@ class CustomRegistration(RegisterSerializer):
          except:
              pass
 
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('user', 'bio', 'image')
