@@ -29,7 +29,15 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
 class CustomRegisterView(RegisterView):
     serializer_class = CustomRegistration
-    # serializer_class = RegisterSerializer
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        if response.status_code == status.HTTP_201_CREATED:
+           
+            profile=Profile.objects.get(user__email=self.request.data['email'])
+            profile.first_name=self.request.data['first_name']
+            profile.last_name=self.request.data['last_name']
+            profile.save()
+        return response
 
 
 

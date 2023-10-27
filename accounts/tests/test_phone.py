@@ -1,3 +1,5 @@
+import email
+from os import access
 from urllib import response
 from django.test import TestCase
 from django.urls import reverse
@@ -6,16 +8,25 @@ from rest_framework.test import APIClient
 from django.core.exceptions import ObjectDoesNotExist
 from accounts.models import PhoneModel  # Update with the correct import
 from django.core import mail
+from django.contrib.auth import get_user_model
+from allauth.account.models import EmailConfirmation, EmailConfirmationHMAC, EmailAddress
+
+from accounts.tests.test_user import AccessTokenTest, UserTest 
+User=get_user_model()
+
 
 class GetPhoneNumberRegisteredTimeBasedTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.phone_number = "1234567890"  # Replace with a phone number you want to use
-        self.otp_key = "your_base64_encoded_key"  # Replace with a valid key
+        user = User.objects.create_user(username='testuser',email='test@example.com', password='testpassword')
+
+        self.client.force_authenticate(user=user)
 
     def test_get_request_creates_PhoneModel_if_not_exists(self):
+      
         response = self.client.get(reverse('OTP_Gen', args=[self.phone_number]))
-        # print(response.data,response.status_code)
+       
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertTrue(PhoneModel.objects.filter(Mobile=self.phone_number).exists())
 

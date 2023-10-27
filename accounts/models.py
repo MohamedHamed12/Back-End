@@ -19,6 +19,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg',upload_to='profile_image', blank=True)
     bio = models.TextField(blank=True)
-
+    first_name=models.CharField(max_length=30,blank=True)
+    last_name=models.CharField(max_length=30,blank=True)
+    
     def __str__(self):
-        return str(self.user.username)
+        return str(self.first_name+' '+self.last_name)
