@@ -145,5 +145,5 @@ class AccessTokenTest(TestCase):
         response = cls.client.post(url, data)
         cls.assertEqual(response.status_code, status.HTTP_200_OK)
         cls.access_token = response.data.get('access_token', None)
-        print(response.data,'*****')
-        print(cls.access_token)
+        # print(response.data,'*****')
+        # print(cls.access_token)

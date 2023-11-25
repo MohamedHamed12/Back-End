@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -289.9999999999998,
-    "scrollLeft": -595.333333333334,
+    "scrollTop": -325.33333333333366,
+    "scrollLeft": -826.0000000000005,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": false,
@@ -168,7 +168,7 @@
           "active": false,
           "left": 0.9549,
           "top": 20.5263,
-          "zIndex": 24,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF7400"
@@ -392,7 +392,7 @@
           "active": false,
           "left": 65.6418,
           "top": 309.4725,
-          "zIndex": 57,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60,
           "color": "#9E9E9E"
@@ -478,7 +478,7 @@
           "active": false,
           "left": 487.7077,
           "top": 28.7548,
-          "zIndex": 32,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF9100"
@@ -564,7 +564,7 @@
           "active": false,
           "left": 0,
           "top": 751.8316,
-          "zIndex": 5,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -627,7 +627,7 @@
           "active": false,
           "left": 377.3709,
           "top": 660.9754,
-          "zIndex": 122,
+          "zIndex": 7,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FFEB3B"
@@ -824,6 +824,29 @@
             "id": "268b5214-4cfb-4c0c-a4b8-1b50c772320d"
           },
           {
+            "name": "sales",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0dbae691-31ef-4a44-aa9c-12bec68289b6"
+          },
+          {
             "name": "",
             "comment": "",
             "dataType": "INT",
@@ -917,10 +940,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 797.4306,
-          "top": 284.2018,
-          "zIndex": 281,
+          "active": true,
+          "left": 797.4305,
+          "top": 278.2759,
+          "zIndex": 28,
           "widthName": 60,
           "widthComment": 60,
           "color": "#56F100"
@@ -1006,7 +1029,7 @@
           "active": false,
           "left": 376.5209,
           "top": 912.8822,
-          "zIndex": 160,
+          "zIndex": 5,
           "widthName": 69.1962890625,
           "widthComment": 60,
           "color": "#FF00E0"
@@ -1092,7 +1115,7 @@
           "active": false,
           "left": 808.9551,
           "top": 702.6065,
-          "zIndex": 153,
+          "zIndex": 4,
           "widthName": 77.14990234375,
           "widthComment": 60,
           "color": "#AD3434"
@@ -1178,7 +1201,7 @@
           "active": false,
           "left": 748.001,
           "top": 18.167,
-          "zIndex": 194,
+          "zIndex": 10,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1399,9 +1422,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1360.7084,
-          "top": 282.2767,
-          "zIndex": 258,
+          "left": 1362.1899,
+          "top": 270.4247,
+          "zIndex": 11,
           "widthName": 60.51904296875,
           "widthComment": 60,
           "color": "#00F2FF"
@@ -1510,7 +1533,7 @@
           "active": false,
           "left": 1087.3889,
           "top": 20.9441,
-          "zIndex": 220,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1518,7 +1541,15 @@
         "id": "cc689105-c600-4c11-b5b0-f873ac891883"
       }
     ],
-    "indexes": []
+    "indexes": [
+      {
+        "name": "",
+        "columns": [],
+        "unique": false,
+        "id": "ea8f1f63-62f2-4ea9-be98-8da2392cfee5",
+        "tableId": "5f6ffaee-2d97-49a1-ae61-458cdb4e0aaf"
+      }
+    ]
   },
   "memo": {
     "memos": []
@@ -1673,8 +1704,8 @@
           "columnIds": [
             "7a4eabad-7fc5-454a-81a3-1a4d14482a4a"
           ],
-          "x": 863.0786712890625,
-          "y": 284.2018,
+          "x": 863.0785712890626,
+          "y": 278.2759,
           "direction": "top"
         },
         "constraintName": "fk_category_to_medications",
@@ -1690,8 +1721,8 @@
           "columnIds": [
             "a8d31a40-af9c-4828-ac73-425b2bf75b4e"
           ],
-          "x": 928.726742578125,
-          "y": 599.2018,
+          "x": 928.726642578125,
+          "y": 613.7759,
           "direction": "bottom"
         },
         "end": {
@@ -1751,8 +1782,8 @@
           "columnIds": [
             "f3798e70-c567-41f9-8868-766ff9b3600b"
           ],
-          "x": 994.3748138671875,
-          "y": 284.2018,
+          "x": 994.3747138671876,
+          "y": 278.2759,
           "direction": "top"
         },
         "constraintName": "fk_discount_to_product",
@@ -1768,8 +1799,8 @@
           "columnIds": [
             "a8d31a40-af9c-4828-ac73-425b2bf75b4e"
           ],
-          "x": 1060.0228851562501,
-          "y": 362.9518,
+          "x": 1060.02278515625,
+          "y": 362.1509,
           "direction": "right"
         },
         "end": {
@@ -1777,8 +1808,8 @@
           "columnIds": [
             "0b5981ff-5353-49f3-a867-b44175338feb"
           ],
-          "x": 1360.7084,
-          "y": 345.6517,
+          "x": 1362.1899,
+          "y": 333.7997,
           "direction": "left"
         },
         "constraintName": "fk_product_to_pharmacy",
@@ -1794,8 +1825,8 @@
           "columnIds": [
             "1da73ea8-61d5-43ed-9607-aabf54a10c8c"
           ],
-          "x": 1360.7084,
-          "y": 472.4017,
+          "x": 1362.1899,
+          "y": 460.5497,
           "direction": "left"
         },
         "end": {
@@ -1803,8 +1834,8 @@
           "columnIds": [
             "8b62bb4a-75bd-4bd4-8997-6fbedb6369c0"
           ],
-          "x": 1060.0228851562501,
-          "y": 520.4518,
+          "x": 1060.02278515625,
+          "y": 529.9009,
           "direction": "right"
         },
         "constraintName": "fk_pharmacy_to_product",

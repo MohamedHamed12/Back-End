@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     # added apps
     'accounts',
+    'products',
+    'pharmacy',
     # rest framework
     'rest_framework',
     'rest_framework.authtoken',
@@ -57,7 +59,10 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration',
     # cors headers
-    'corsheaders'
+    'corsheaders',
+
+    # filters
+    'django_filters',
 
 
 ]
@@ -157,7 +162,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-    )
+    ),
+
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ),
+
 }
 
 

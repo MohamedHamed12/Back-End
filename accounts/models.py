@@ -21,6 +21,14 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     first_name=models.CharField(max_length=30,blank=True)
     last_name=models.CharField(max_length=30,blank=True)
-    
+    date_of_birth = models.DateField(blank=True, null=True)
+    gender = models.CharField(max_length=255,blank=True)
     def __str__(self):
         return str(self.first_name+' '+self.last_name)
+
+class PatientProfile (models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+class DoctorProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    specialization = models.CharField(max_length=100)
