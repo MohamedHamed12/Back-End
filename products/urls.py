@@ -7,7 +7,7 @@ router=DefaultRouter()
 router.register('category',CategoryViewSet)
 router.register('product',ProductViewSet)
 router.register('discount',DiscountViewSet)
-
+router.register('orderItem',OrderItemViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     # path('category/', CategoryViewSet.as_view({'get': 'list', 'post': 'create'}), name='category-list'),

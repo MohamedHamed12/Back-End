@@ -24,12 +24,16 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True)
     price = models.IntegerField(null=True, blank=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    sales=models.PositiveIntegerField(default=0)
+    orders = models.ManyToManyField('orders.Order', through='products.OrderItem', related_name='products')
+    pharmacy = models.ForeignKey('pharmacy.Pharmacy', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
 
-
-    # location = models.OneToOneField('Profile', on_delete=models.CASCADE, primary_key=True)
-    # pharmacy = models.ForeignKey('Pharmacy', on_delete=models.SET_NULL, null=True, blank=True)
+class OrderItem(models.Model):
+    product = models.ForeignKey('products.Product', on_delete=models.CASCADE)
+    order = models.ForeignKey('orders.Order', on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(help_text='Quantity of the product')
+    def __str__(self):
+        return self.product.name

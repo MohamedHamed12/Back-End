@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -325.33333333333366,
-    "scrollLeft": -826.0000000000005,
-    "zoomLevel": 0.9,
+    "scrollTop": -685.9999999999991,
+    "scrollLeft": -505.3333333333333,
+    "zoomLevel": 0.6,
     "show": {
       "tableComment": false,
       "columnComment": false,
@@ -392,7 +392,7 @@
           "active": false,
           "left": 65.6418,
           "top": 309.4725,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60,
           "color": "#9E9E9E"
@@ -478,7 +478,7 @@
           "active": false,
           "left": 487.7077,
           "top": 28.7548,
-          "zIndex": 2,
+          "zIndex": 48,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF9100"
@@ -564,7 +564,7 @@
           "active": false,
           "left": 0,
           "top": 751.8316,
-          "zIndex": 8,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2196F3"
@@ -627,7 +627,7 @@
           "active": false,
           "left": 377.3709,
           "top": 660.9754,
-          "zIndex": 7,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FFEB3B"
@@ -940,10 +940,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 797.4305,
           "top": 278.2759,
-          "zIndex": 28,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60,
           "color": "#56F100"
@@ -952,7 +952,7 @@
         "id": "5f6ffaee-2d97-49a1-ae61-458cdb4e0aaf"
       },
       {
-        "name": "prescription",
+        "name": "order",
         "comment": "",
         "columns": [
           {
@@ -1023,14 +1023,37 @@
               "widthDefault": 60
             },
             "id": "81f809ce-6c9a-43be-863f-4ad906f1de86"
+          },
+          {
+            "name": "order_item",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 64.13720703125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "dbb0ea29-4ee8-4973-b001-df205ac3004a"
           }
         ],
         "ui": {
           "active": false,
-          "left": 376.5209,
-          "top": 912.8822,
-          "zIndex": 5,
-          "widthName": 69.1962890625,
+          "left": 550.4473,
+          "top": 815.2524,
+          "zIndex": 68,
+          "widthName": 60,
           "widthComment": 60,
           "color": "#FF00E0"
         },
@@ -1038,7 +1061,7 @@
         "id": "ea373907-f593-42ee-a563-e755874db60e"
       },
       {
-        "name": "product_item",
+        "name": "order_item",
         "comment": "",
         "columns": [
           {
@@ -1067,7 +1090,7 @@
           {
             "name": "quantity",
             "comment": "",
-            "dataType": "INTEGER",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1088,7 +1111,7 @@
             "id": "b1dbcd12-1d62-4929-9727-69499b5d1485"
           },
           {
-            "name": "prescription",
+            "name": "order",
             "comment": "",
             "dataType": "INT",
             "default": "",
@@ -1103,20 +1126,43 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 69.1962890625,
+              "widthName": 60,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
             "id": "ba1b2e49-b85a-4d31-b26b-11b151431469"
+          },
+          {
+            "name": "",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "265ef70f-7564-4b9f-a1ce-2c3924c145a3"
           }
         ],
         "ui": {
           "active": false,
-          "left": 808.9551,
-          "top": 702.6065,
-          "zIndex": 4,
-          "widthName": 77.14990234375,
+          "left": 961.8103,
+          "top": 811.5597,
+          "zIndex": 72,
+          "widthName": 64.13720703125,
           "widthComment": 60,
           "color": "#AD3434"
         },
@@ -1201,7 +1247,7 @@
           "active": false,
           "left": 748.001,
           "top": 18.167,
-          "zIndex": 10,
+          "zIndex": 7,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1424,7 +1470,7 @@
           "active": false,
           "left": 1362.1899,
           "top": 270.4247,
-          "zIndex": 11,
+          "zIndex": 8,
           "widthName": 60.51904296875,
           "widthComment": 60,
           "color": "#00F2FF"
@@ -1533,7 +1579,7 @@
           "active": false,
           "left": 1087.3889,
           "top": 20.9441,
-          "zIndex": 9,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1669,17 +1715,17 @@
           "columnIds": [
             "c80876e8-f7db-4b02-940a-b715965111ab"
           ],
-          "x": 485.8709,
-          "y": 770.9754,
-          "direction": "bottom"
+          "x": 594.3709,
+          "y": 715.9754,
+          "direction": "right"
         },
         "end": {
           "tableId": "ea373907-f593-42ee-a563-e755874db60e",
           "columnIds": [
             "97db408a-e3c6-4ca3-876c-080dce408bd2"
           ],
-          "x": 486.010401953125,
-          "y": 912.8822,
+          "x": 661.015903515625,
+          "y": 815.2524,
           "direction": "top"
         },
         "constraintName": "fk_patients_to_prescription",
@@ -1711,58 +1757,6 @@
         "constraintName": "fk_category_to_medications",
         "visible": true,
         "id": "19696582-4e75-4de5-bc16-89fbc96b0c0f"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "5f6ffaee-2d97-49a1-ae61-458cdb4e0aaf",
-          "columnIds": [
-            "a8d31a40-af9c-4828-ac73-425b2bf75b4e"
-          ],
-          "x": 928.726642578125,
-          "y": 613.7759,
-          "direction": "bottom"
-        },
-        "end": {
-          "tableId": "7ccd6abb-7117-49a3-8ac3-74be2472154a",
-          "columnIds": [
-            "3821a5e1-311e-4c87-99e9-69ced6d90719"
-          ],
-          "x": 922.05324453125,
-          "y": 702.6065,
-          "direction": "top"
-        },
-        "constraintName": "fk_medications_to_medicine_items",
-        "visible": true,
-        "id": "fe237d86-1180-4128-8c8c-c7d08b1a2898"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "ea373907-f593-42ee-a563-e755874db60e",
-          "columnIds": [
-            "81f809ce-6c9a-43be-863f-4ad906f1de86"
-          ],
-          "x": 595.49990390625,
-          "y": 978.1322,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "7ccd6abb-7117-49a3-8ac3-74be2472154a",
-          "columnIds": [
-            "ba1b2e49-b85a-4d31-b26b-11b151431469"
-          ],
-          "x": 808.9551,
-          "y": 767.8565,
-          "direction": "left"
-        },
-        "constraintName": "fk_prescription_to_medicine_items",
-        "visible": true,
-        "id": "7fda1e7d-5390-4502-addc-1e79da817634"
       },
       {
         "identification": false,
@@ -1841,6 +1835,84 @@
         "constraintName": "fk_pharmacy_to_product",
         "visible": true,
         "id": "316098af-a49b-468e-9585-519b9079fd3f"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "7ccd6abb-7117-49a3-8ac3-74be2472154a",
+          "columnIds": [
+            "265ef70f-7564-4b9f-a1ce-2c3924c145a3"
+          ],
+          "x": 961.8103,
+          "y": 849.3097,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "ea373907-f593-42ee-a563-e755874db60e",
+          "columnIds": [
+            "dbb0ea29-4ee8-4973-b001-df205ac3004a"
+          ],
+          "x": 771.58450703125,
+          "y": 853.0024,
+          "direction": "right"
+        },
+        "constraintName": "fk_product_item_to_orders",
+        "visible": true,
+        "id": "e849c544-acc8-4c66-a676-b4e03e77c969"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "ea373907-f593-42ee-a563-e755874db60e",
+          "columnIds": [
+            "81f809ce-6c9a-43be-863f-4ad906f1de86"
+          ],
+          "x": 771.58450703125,
+          "y": 928.5024,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "7ccd6abb-7117-49a3-8ac3-74be2472154a",
+          "columnIds": [
+            "ba1b2e49-b85a-4d31-b26b-11b151431469"
+          ],
+          "x": 961.8103,
+          "y": 924.8097,
+          "direction": "left"
+        },
+        "constraintName": "fk_prescription_to_medicine_items",
+        "visible": true,
+        "id": "7fda1e7d-5390-4502-addc-1e79da817634"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "5f6ffaee-2d97-49a1-ae61-458cdb4e0aaf",
+          "columnIds": [
+            "a8d31a40-af9c-4828-ac73-425b2bf75b4e"
+          ],
+          "x": 928.726642578125,
+          "y": 613.7759,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "7ccd6abb-7117-49a3-8ac3-74be2472154a",
+          "columnIds": [
+            "3821a5e1-311e-4c87-99e9-69ced6d90719"
+          ],
+          "x": 1070.3103,
+          "y": 811.5597,
+          "direction": "top"
+        },
+        "constraintName": "fk_medications_to_medicine_items",
+        "visible": true,
+        "id": "fe237d86-1180-4128-8c8c-c7d08b1a2898"
       }
     ]
   }

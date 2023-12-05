@@ -31,10 +31,16 @@ class ProductViewSet(viewsets.ModelViewSet):
         filters.SearchFilter,
         filters.OrderingFilter,
     ]
-
-
-
+    def get_top_selling_products(self):
+        top_products = Product.objects.annotate(total_sales=Sum('orderitem__quantity')).order_by('-total_sales')
+        serializer = ProductSerializer(top_products, many=True)
+        return Response(serializer.data)
 class  DiscountViewSet(viewsets.ModelViewSet):
     queryset = Discount.objects.all()
     serializer_class = DiscountSerializer
     filterset_class = DiscountFilter
+
+
+class OrderItemViewSet(viewsets.ModelViewSet):
+    queryset = OrderItem.objects.all()
+    serializer_class = OrderItemSerializer
