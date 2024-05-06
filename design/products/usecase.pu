@@ -1,0 +1,60 @@
+@startuml usecase
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor User as User
+
+package "Products" {
+    usecase "View Product Details" as ViewProductDetails
+    usecase "Add Product to Cart" as AddProductToCart
+    usecase "Rate Product" as RateProduct
+    usecase "Search Products" as SearchProducts
+    usecase "View Related Products" as ViewRelatedProducts
+    usecase "View Top Products" as ViewTopProducts
+    usecase "Manage Products" as ManageProducts
+}
+
+package "Category" {
+    usecase "View Category" as ViewCategory
+    usecase "Add Category" as AddCategory
+    usecase "Edit Category" as EditCategory
+    usecase "Delete Category" as DeleteCategory
+    usecase "Search Categories" as SearchCategories
+    usecase "View Subcategories" as ViewSubcategories
+}
+
+package "Discount" {
+    usecase "View Discounts" as ViewDiscounts
+    usecase "Apply Discount" as ApplyDiscount
+}
+
+package "Wishlist" {
+    usecase "View Wishlist" as ViewWishlist
+    usecase "Add to Wishlist" as AddToWishlist
+    usecase "Remove from Wishlist" as RemoveFromWishlist
+}
+
+User --> ViewProductDetails
+User --> AddProductToCart
+User --> RateProduct
+User --> SearchProducts
+User --> ViewRelatedProducts
+User --> ViewTopProducts
+User --> ManageProducts
+
+User --> ViewCategory
+User --> AddCategory
+User --> EditCategory
+User --> DeleteCategory
+User --> SearchCategories
+User --> ViewSubcategories
+
+User --> ViewDiscounts
+User --> ApplyDiscount
+
+User --> ViewWishlist
+User --> AddToWishlist
+User --> RemoveFromWishlist
+
+@enduml
